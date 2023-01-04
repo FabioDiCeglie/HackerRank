@@ -110,4 +110,24 @@ function birthdayCakeCandles(candles: number[]): number {
   return filterArrayWithMaximumHeightOfCandles.length;
 }
 
-birthdayCakeCandles([3, 2, 1, 3]);
+// birthdayCakeCandles([3, 2, 1, 3]);
+
+function timeConversion(s: string): string {
+  // Write your code here
+  let hours = s.slice(0, 2);
+  let hoursInt = Number(hours);
+  if (s.includes("PM")) {
+    if (hours !== "12") {
+      hoursInt += 12;
+      hours = `${hoursInt}`;
+    }
+  }
+  if (s.includes("AM")) {
+    if (hours === "12") {
+      hours = "00";
+    }
+  }
+  return `${hours}:${s.slice(3, 8)}`;
+}
+
+timeConversion("07:05:45PM");
