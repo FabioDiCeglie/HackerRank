@@ -130,4 +130,55 @@ function timeConversion(s: string): string {
   return `${hours}:${s.slice(3, 8)}`;
 }
 
-timeConversion("07:05:45PM");
+// timeConversion("07:05:45PM");
+
+function countApplesAndOranges(
+  s: number,
+  t: number,
+  a: number,
+  b: number,
+  apples: number[],
+  oranges: number[]
+): void {
+  // Write your code here
+  let numberOfApplesFall = 0;
+  let numberOfOrangesFall = 0;
+  for (var i = 0; i < apples.length; i++) {
+    const sumDistance = apples[i] + a;
+    if (sumDistance >= s && sumDistance <= t) {
+      numberOfApplesFall += 1;
+    }
+  }
+  for (var i = 0; i < oranges.length; i++) {
+    const sumDistance = oranges[i] + b;
+    if (sumDistance >= s && sumDistance <= t) {
+      numberOfOrangesFall += 1;
+    }
+  }
+
+  console.log(numberOfApplesFall);
+  console.log(numberOfOrangesFall);
+}
+
+// countApplesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -6]);
+
+function kangaroo(x1: number, v1: number, x2: number, v2: number): string {
+  // Write your code here
+  if (x2 > x1 && v2 > v1) {
+    return "NO";
+  }
+  if (v2 === v1) {
+    return "NO";
+  }
+  while (x1 !== x2) {
+    console.log(x1, x2);
+    x1 += v1;
+    x2 += v2;
+    if (x1 > x2) {
+      return "NO";
+    }
+  }
+  return "YES";
+}
+
+kangaroo(0, 3, 4, 2);
