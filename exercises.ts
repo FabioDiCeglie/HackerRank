@@ -7,7 +7,7 @@ function oddNumbers(l: number, r: number) {
   return filterArray;
 }
 
-oddNumbers(1, 2);
+// oddNumbers(1, 2);
 
 function compareTriplets(a: Number[], b: Number[]) {
   let score = [0, 0];
@@ -17,7 +17,7 @@ function compareTriplets(a: Number[], b: Number[]) {
   return score;
 }
 
-compareTriplets([4, 2], [4, 4]);
+// compareTriplets([4, 2], [4, 4]);
 
 function aVeryBigSum(ar: Array<number>) {
   const totalSum = ar.reduce((a, b) => a + b, 0);
@@ -34,7 +34,7 @@ function aVeryBigSum(ar: Array<number>) {
 //   return total;
 // }
 
-aVeryBigSum([1, 2, 3]);
+// aVeryBigSum([1, 2, 3]);
 
 function diagonalDifference(arr: Array<Array<number>>) {
   // Write your code here
@@ -52,12 +52,12 @@ function diagonalDifference(arr: Array<Array<number>>) {
   return Math.abs(countDiagonalLeft - countDiagonalRight);
 }
 
-diagonalDifference([
-  [1, 2, 3],
-  [2, 3, 4],
-  [4, 4, 4],
-  [5, 5, 5],
-]);
+// diagonalDifference([
+//   [1, 2, 3],
+//   [2, 3, 4],
+//   [4, 4, 4],
+//   [5, 5, 5],
+// ]);
 
 function plusMinusNumbers(arr: number[]): void {
   // Write your code here
@@ -74,7 +74,7 @@ function plusMinusNumbers(arr: number[]): void {
   console.log(ratioZero.toFixed(6));
 }
 
-plusMinusNumbers([1, 2, 3]);
+// plusMinusNumbers([1, 2, 3]);
 
 function stairCase(n: number): void {
   // Write your code here
@@ -87,4 +87,16 @@ function stairCase(n: number): void {
   }
 }
 
-stairCase(6);
+// stairCase(6);
+
+function miniMaxSum(arr: number[]): void {
+  // Write your code here
+  const findMinimum = Math.min(...arr);
+  const findMaximum = Math.max(...arr);
+  console.log(findMinimum, findMaximum);
+  const calculateMinimumAmount = arr.reduce((a, b) => a + b) - findMaximum;
+  const calculateMaximumAmount = arr.reduce((a, b) => a + b) - findMinimum;
+  console.log(calculateMinimumAmount, calculateMaximumAmount);
+}
+
+miniMaxSum([1, 2, 3, 4, 5]);
