@@ -182,3 +182,32 @@ function kangaroo(x1: number, v1: number, x2: number, v2: number): string {
 }
 
 kangaroo(0, 3, 4, 2);
+
+function breakingRecords(scores: number[]): number[] {
+  // Write your code here
+  let numberOfGames = scores.length;
+  let highestScore: Array<number> = [];
+  let lowestScore: Array<number> = [];
+
+  let score = scores[0];
+  for (var i = 0; i < numberOfGames; i++) {
+    if (scores[i] > score) {
+      highestScore.push(scores[i]);
+      score = scores[i];
+    }
+    if (score < scores[i]) {
+      score = scores[i];
+    }
+  }
+  let previousScore = scores[0];
+  for (var i = 0; i < numberOfGames; i++) {
+    if (scores[i] < previousScore) {
+      lowestScore.push(scores[i]);
+      previousScore = scores[i];
+    }
+    if (previousScore > scores[i]) {
+      previousScore = scores[i];
+    }
+  }
+  return [highestScore.length, lowestScore.length];
+}
