@@ -99,4 +99,15 @@ function miniMaxSum(arr: number[]): void {
   console.log(calculateMinimumAmount, calculateMaximumAmount);
 }
 
-miniMaxSum([1, 2, 3, 4, 5]);
+// miniMaxSum([1, 2, 3, 4, 5]);
+
+function birthdayCakeCandles(candles: number[]): number {
+  // Write your code here
+  const findMax = Math.max(...candles);
+  const filterArrayWithMaximumHeightOfCandles = candles.filter(
+    (e) => e === findMax
+  );
+  return filterArrayWithMaximumHeightOfCandles.length;
+}
+
+birthdayCakeCandles([3, 2, 1, 3]);
