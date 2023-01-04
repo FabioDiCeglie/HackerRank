@@ -75,3 +75,16 @@ function plusMinusNumbers(arr: number[]): void {
 }
 
 plusMinusNumbers([1, 2, 3]);
+
+function stairCase(n: number): void {
+  // Write your code here
+  let hash = "#";
+  let amountSpace = n - 1;
+  for (var i = 0; i < n; i++) {
+    console.log(" ".repeat(amountSpace) + hash);
+    hash += "#";
+    amountSpace -= 1;
+  }
+}
+
+stairCase(6);
