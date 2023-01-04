@@ -58,3 +58,20 @@ diagonalDifference([
   [4, 4, 4],
   [5, 5, 5],
 ]);
+
+function plusMinusNumbers(arr: number[]): void {
+  // Write your code here
+  let positiveNumbers = arr.filter((e: number) => e > 0);
+  let negativeNumbers = arr.filter((e: number) => e < 0);
+  let zero = arr.filter((e: number) => e === 0);
+
+  const ratioPositiveNumbers = positiveNumbers.length / arr.length;
+  const ratioNegativeNumbers = negativeNumbers.length / arr.length;
+  const ratioZero = zero.length / arr.length;
+
+  console.log(ratioPositiveNumbers.toFixed(6));
+  console.log(ratioNegativeNumbers.toFixed(6));
+  console.log(ratioZero.toFixed(6));
+}
+
+plusMinusNumbers([1, 2, 3]);
