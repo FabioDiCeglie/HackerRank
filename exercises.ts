@@ -205,3 +205,31 @@ function breakingRecords(scores: number[]): number[] {
 }
 
 // breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42]);
+
+function birthday(s: number[], d: number, m: number): number {
+  // let square = s[0];
+  let calculateSquare = 0;
+  let counter = 0;
+  let month = m;
+  for (var i = 0; i < s.length; i++) {
+    const arrayNew = s.slice(counter, month);
+    counter += 1;
+    month += 1;
+    const solution = arrayNew.reduce((a, b) => a + b, 0);
+    if (solution === d) {
+      calculateSquare += 1;
+    }
+    // if(s.length === 1 && s[i] === d){
+    //    return findSquares += 1
+    // }
+    // if(square + s[i] === d){
+    //     findSquares += 1
+    //     square = s[i]
+    // }
+    // square = s[i]
+  }
+
+  return calculateSquare;
+}
+
+birthday([1, 1, 1, 1, 1, 1]);
