@@ -181,4 +181,34 @@ function migratoryBirds(arr: number[]): number {
   return Number(find);
 }
 
-migratoryBirds([1, 4, 4, 4, 5, 3]);
+// migratoryBirds([1, 4, 4, 4, 5, 3]);
+
+function dayOfProgrammer(year: number): string {
+  // Write your code here
+  const programmerDay = 256;
+  let monthsOfTheYear = [31, 28, 31, 30, 31, 30, 31, 31]; // not leap years
+  if (year >= 1700 && year <= 1917) {
+    // is julianCalendar
+    if (year % 4 == 0) {
+      monthsOfTheYear = [31, 29, 31, 30, 31, 30, 31, 31];
+    }
+  }
+  if (year === 1918) {
+    monthsOfTheYear = [31, 14, 31, 30, 31, 30, 31, 32];
+  }
+  if (year > 1919) {
+    // is gregorianCalendar
+    if (year % 400 == 0 || (year % 4 == 0 && year % 100 !== 0)) {
+      monthsOfTheYear = [31, 29, 31, 30, 31, 30, 31, 31];
+    }
+  }
+  const calculateDaysInLeapYear = monthsOfTheYear.reduce((a, b) => a + b);
+  let day = 256 - calculateDaysInLeapYear;
+  let month =
+    monthsOfTheYear.length + 1 < 10
+      ? `0${monthsOfTheYear.length + 1}`
+      : monthsOfTheYear.length + 1;
+  return `${day}.${month}.${year}`;
+}
+
+// dayOfProgrammer(2017);
