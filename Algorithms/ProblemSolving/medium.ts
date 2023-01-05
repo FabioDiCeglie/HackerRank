@@ -130,3 +130,55 @@ function birthday(s: number[], d: number, m: number): number {
 }
 
 birthday([1, 1, 1, 1, 1, 1], 3, 2);
+
+function divisibleSumPairs(n: number, k: number, ar: number[]): number {
+  // Write your code here
+  const sortArray = ar.sort();
+  let validPairs = 0;
+
+  for (var i = 0; i < n - 1; i++) {
+    for (var j = i + 1; j < n; j++) {
+      const sum = sortArray[i] + sortArray[j];
+      if (sum % k == 0) {
+        validPairs += 1;
+      }
+    }
+  }
+  return validPairs;
+}
+
+divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]);
+
+function migratoryBirds(arr: number[]): number {
+  // let maxcount = 0;
+  // let element_having_max_freq;
+  // for (let i = 0; i < arr.length; i++) {
+  //     let count = 0;
+  //     for (let j = 0; j < arr.length; j++) {
+  //         if (arr[i] == arr[j])
+  //             count++;
+  //         if (count > maxcount) {
+  //         maxcount = count;
+  //         element_having_max_freq = arr[i];
+  //         }
+  //         }
+  // }
+  // return element_having_max_freq;
+
+  const getCount = (value: number) => arr.filter((e) => e === value).length;
+  const count: { [key: string]: number } = {
+    "1": getCount(1),
+    "2": getCount(2),
+    "3": getCount(3),
+    "4": getCount(4),
+    "5": getCount(5),
+  };
+  const value = Object.values(count);
+  const max_count = Math.max(...value);
+  const find = Object.keys(count).find(
+    (key: string) => count[key] === max_count
+  );
+  return Number(find);
+}
+
+migratoryBirds([1, 4, 4, 4, 5, 3]);
