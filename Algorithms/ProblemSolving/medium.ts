@@ -243,3 +243,21 @@ function sockMerchant(n: number, ar: number[]): number {
 }
 
 // sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
+
+function pageCount(n: number, p: number): number {
+  // Write your code here
+  let numberOfPagesToTurn = [0, 0];
+  for (var i = 1; i < n; i++) {
+    if (i === p) {
+      numberOfPagesToTurn[0] += 1;
+    }
+  }
+  for (var i = n; i > p; i--) {
+    if (i !== p) {
+      numberOfPagesToTurn[1] += 1;
+    }
+  }
+  return Math.min(...numberOfPagesToTurn);
+}
+
+pageCount(6, 2);
