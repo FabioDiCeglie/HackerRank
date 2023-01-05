@@ -225,3 +225,21 @@ function bonAppetit(bill: number[], k: number, b: number): void {
 }
 
 // bonAppetit([3, 10, 2, 9], 1, 12);
+
+function sockMerchant(n: number, ar: number[]): number {
+  // Write your code here
+  const sortArray = ar.sort();
+  let pairsSocksMatchingColors = 0;
+  for (var i = 0; i < n; i++) {
+    for (var j = i + 1; j < n; j++) {
+      if (sortArray[i] === sortArray[j]) {
+        i += 2;
+        j += 1;
+        pairsSocksMatchingColors += 1;
+      }
+    }
+  }
+  return pairsSocksMatchingColors;
+}
+
+// sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
