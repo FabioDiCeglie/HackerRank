@@ -185,7 +185,6 @@ function migratoryBirds(arr: number[]): number {
 
 function dayOfProgrammer(year: number): string {
   // Write your code here
-  const programmerDay = 256;
   let monthsOfTheYear = [31, 28, 31, 30, 31, 30, 31, 31]; // not leap years
   if (year >= 1700 && year <= 1917) {
     // is julianCalendar
@@ -212,3 +211,17 @@ function dayOfProgrammer(year: number): string {
 }
 
 // dayOfProgrammer(2017);
+
+function bonAppetit(bill: number[], k: number, b: number): void {
+  // Write your code here
+  // const filterBillWithoutAnna = bill.filter((e) => e !== bill[k])
+  delete bill[k];
+  const whatAnnaHadToPay = bill.reduce((a, b) => a + b) / 2;
+  // const billOfBrian = bill.reduce((a,b) => a + b) / 2
+  if (b === whatAnnaHadToPay) {
+    return console.log("Bon Appetit");
+  }
+  console.log(b - whatAnnaHadToPay);
+}
+
+// bonAppetit([3, 10, 2, 9], 1, 12);
