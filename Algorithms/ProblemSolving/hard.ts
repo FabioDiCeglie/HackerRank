@@ -63,3 +63,27 @@ function countingValleys(steps: number, path: string): number {
 }
 
 // countingValleys(8, "UDDDUDUU");
+
+function getMoneySpent(keyboards, drives, b) {
+  const sortedKeyboards = keyboards.sort();
+  const sortedDrives = drives.sort();
+  const filterKeyboards = sortedKeyboards.filter((e) => e < b);
+  const filterDrives = sortedDrives.filter((e) => e < b);
+  if (filterKeyboards.length === 0 || filterDrives.length === 0) {
+    return -1;
+  }
+  let maximumBudget = 0;
+  for (var i = filterDrives.length - 1; i >= 0; i--) {
+    for (var j = filterKeyboards.length - 1; j >= 0; j--) {
+      if (
+        filterDrives[i] + filterKeyboards[j] <= b &&
+        filterDrives[i] + filterKeyboards[j] > maximumBudget
+      ) {
+        maximumBudget = filterDrives[i] + filterKeyboards[j];
+      }
+    }
+  }
+  return maximumBudget;
+}
+
+// getMoneySpent([3,1],[5,2,8],10)
