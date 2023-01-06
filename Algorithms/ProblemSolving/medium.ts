@@ -260,7 +260,7 @@ function pageCount(n: number, p: number): number {
   return Math.min(...numberOfPagesToTurn);
 }
 
-pageCount(6, 2);
+// pageCount(6, 2);
 
 function pageCountBook(n: number, p: number): number {
   let numberOfPagesToTurn = [0, 0];
@@ -301,4 +301,4 @@ function pageCountBook(n: number, p: number): number {
   return Math.min(...numberOfPagesToTurn);
 }
 
-pageCountBook(6, 2);
+// pageCountBook(6, 2);
