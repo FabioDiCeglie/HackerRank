@@ -64,7 +64,7 @@ function countingValleys(steps: number, path: string): number {
 
 // countingValleys(8, "UDDDUDUU");
 
-function getMoneySpent(keyboards, drives, b) {
+function getMoneySpent(keyboards: number[], drives: number[], b: number) {
   const sortedKeyboards = keyboards.sort();
   const sortedDrives = drives.sort();
   const filterKeyboards = sortedKeyboards.filter((e) => e < b);
@@ -87,3 +87,19 @@ function getMoneySpent(keyboards, drives, b) {
 }
 
 // getMoneySpent([3,1],[5,2,8],10)
+
+function catAndMouse(x, y, z) {
+  let dA = Math.abs(x - z);
+  let dB = Math.abs(y - z);
+  if (dA === dB) {
+    return "Mouse C";
+  }
+  if (dB > dA) {
+    return "Cat A";
+  }
+  if (dA > dB) {
+    return "Cat B";
+  }
+}
+
+// catAndMouse(1, 2, 3);
