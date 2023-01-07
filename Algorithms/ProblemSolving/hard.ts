@@ -88,7 +88,7 @@ function getMoneySpent(keyboards: number[], drives: number[], b: number) {
 
 // getMoneySpent([3,1],[5,2,8],10)
 
-function catAndMouse(x, y, z) {
+function catAndMouse(x: number, y: number, z: number) {
   let dA = Math.abs(x - z);
   let dB = Math.abs(y - z);
   if (dA === dB) {
@@ -103,3 +103,28 @@ function catAndMouse(x, y, z) {
 }
 
 // catAndMouse(1, 2, 3);
+
+function pickingNumbers(a: Array<number>) {
+  // Write your code here
+  const sortedA = a.sort((a, b) => a - b);
+  let options = [];
+  let len_subarray = 0;
+  let i = 0;
+  let j = 1;
+  while (i < sortedA.length) {
+    while (sortedA[j] - sortedA[i] <= 1) {
+      len_subarray += 1;
+      j++;
+    }
+    len_subarray += 1;
+    options.push(len_subarray as never);
+    len_subarray = 0;
+    i++;
+    if (sortedA[j] - sortedA[i - 1] > 1) {
+      j = i + 1;
+    }
+  }
+  return Math.max(...options);
+}
+
+// pickingNumbers([1,2,2,3,1,2])
