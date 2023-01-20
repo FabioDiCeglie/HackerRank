@@ -100,3 +100,35 @@ function miniMaxSum(arr: number[]): void {
 }
 
 // miniMaxSum([1, 2, 3, 4, 5]);
+
+function fizzBuzz(n) {
+  // Write your code here
+  for (var i = 1; i < n + 1; i++) {
+    if (i % 3 === 0 && i % 5 === 0) console.log("FizzBuzz");
+    else if (i % 3 === 0) console.log("Fizz");
+    else if (i % 5 === 0) console.log("Buzz");
+    else console.log(i);
+  }
+}
+
+const ratio = (num: number, arr: number[]): number => num / arr.length;
+function plusMinus(arr: number[]): void {
+  // Write your code here
+  let positiveNumbers = 0;
+  let negativeNumbers = 0;
+  let zero = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      positiveNumbers += 1;
+    } else if (arr[i] < 0) {
+      negativeNumbers += 1;
+    } else zero += 1;
+  }
+
+  // positive values
+  console.log(ratio(positiveNumbers, arr).toFixed(6));
+  // negative values
+  console.log(ratio(negativeNumbers, arr).toFixed(6));
+  // proportion of zeros
+  console.log(ratio(zero, arr).toFixed(6));
+}

@@ -129,7 +129,7 @@ function birthday(s: number[], d: number, m: number): number {
   return calculateSquare;
 }
 
-birthday([1, 1, 1, 1, 1, 1], 3, 2);
+// birthday([1, 1, 1, 1, 1, 1], 3, 2);
 
 function divisibleSumPairs(n: number, k: number, ar: number[]): number {
   // Write your code here
