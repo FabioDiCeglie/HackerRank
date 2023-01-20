@@ -132,3 +132,14 @@ function plusMinus(arr: number[]): void {
   // proportion of zeros
   console.log(ratio(zero, arr).toFixed(6));
 }
+
+function findMedian(arr: number[]): number {
+  // Write your code here
+  const sortArray = arr.sort((a, b) => a - b);
+  const half = Math.floor(sortArray.length / 2);
+  if (sortArray.length % 2) {
+    return sortArray[half];
+  } else {
+    return sortArray[half - 1] + sortArray[half] / 2;
+  }
+}
