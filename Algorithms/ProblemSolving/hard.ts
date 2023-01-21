@@ -128,3 +128,39 @@ function pickingNumbers(a: Array<number>) {
 }
 
 // pickingNumbers([1,2,2,3,1,2])
+
+function makeAnagram(a, b) {
+  // Write your code here
+  const arr1 = a.split("");
+  const arr2 = b.split("");
+  let object1 = {};
+  let count = 0;
+
+  arr1.forEach((e) => {
+    const keys = Object.keys(object1);
+    if (keys.includes(e)) {
+      object1[e] += 1;
+    } else {
+      object1[e] = 1;
+    }
+  });
+
+  arr2.forEach((e) => {
+    const keys = Object.keys(object1);
+    if (keys.includes(e) && object1[e] > 0) {
+      // decrement letter that is in the object1 as a key
+      object1[e] -= 1;
+    } else {
+      // letter has to be removed
+      count += 1;
+    }
+  });
+
+  // here we do the sum all values of the letters
+  // that has to be removed from object1
+  const getValues = Object.values(object1);
+  const sum = getValues.reduce((a, b) => a + b) as number;
+  return count + sum;
+}
+
+// makeAnagram("abcd", "abcde");
