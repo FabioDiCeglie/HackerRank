@@ -1,14 +1,15 @@
 // Figure it out the anagrams first
 // Count how many different phrases you can make from the words
-// words && phrases
+// anagram are 2 words that have similar characters
+// I want to create a bucket/array that consist of all the anagrams of that keyword
+// for this the perfect data structure of this is an object
 
 const getSorted = (text) => text.split("").sort().join("");
-const makeAnagramsCounter = (a, b) => {
+const makeAnagramsCounter = (words, phrases) => {
   let object1 = {};
-  a.forEach((element) => {
+  words.forEach((element) => {
     const sortedWord = getSorted(element);
     const keys = Object.keys(object1);
-
     if (keys.includes(sortedWord)) {
       object1[sortedWord] = [...object1[sortedWord], element];
     } else {
@@ -17,6 +18,22 @@ const makeAnagramsCounter = (a, b) => {
   });
 
   console.log(object1);
+
+  // let counters = [];
+  phrases.forEach((phrase) => {
+    let counter = 1;
+    phrase.split(" ").forEach((word) => {
+      const sortedWord = getSorted(word);
+      const keys = Object.keys(object1);
+      if (keys.includes(sortedWord)) {
+        counter *= object1[sortedWord].length;
+      }
+    });
+    // counters.push(counter);
+    console.log(counter);
+  });
+
+  // return counters;
 };
 
 makeAnagramsCounter(
@@ -25,11 +42,3 @@ makeAnagramsCounter(
 );
 
 // result 4 8 1
-
-// below : ["below", "elbow"]
-// elbow : ["elbow", "below"]
-// in : ["in", "ni"]
-// ni ; ["in", "ni"]
-// the : ["the"]
-// big: ['big']
-// sleep : ['sleep']
