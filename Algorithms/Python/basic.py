@@ -49,3 +49,19 @@ def hurdleRace(k, height):
 
 # hurdleRace(4, [1,6,3,5,2])
 
+def designerPdfViewer(h, word):
+    word_len = len(word)
+    letters = string.ascii_lowercase
+    index_of_words = []
+
+    for i, w in enumerate(word):
+        for i,letter in enumerate(letters):
+            if(w == letter):
+                index_of_words.append(i)
+
+    letters_heights = []
+    for x in index_of_words:
+        letters_heights.append(h[x])
+
+    tallest_letter = max(letters_heights)
+    return word_len * tallest_letter
