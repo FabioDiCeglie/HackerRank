@@ -37,3 +37,15 @@ def lonelyInteger(a):
             return result
 
 # lonelyInteger(a)
+
+def hurdleRace(k, height):
+    # Write your code here
+    max_numb = max(height)
+
+    if(k > max_numb):
+        return 0
+
+    return max_numb - k
+
+# hurdleRace(4, [1,6,3,5,2])
+
