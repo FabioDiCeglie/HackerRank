@@ -86,9 +86,7 @@ def utopianTree(n):
 
 def angryProfessor(k, a):
     # Write your code here
-    students = a
-    professorStudentsInAttendance = k
-    studentsInTime = len(list(filter(lambda x: x <= 0, students)))
+    studentsInTime = len(list(filter(lambda x: x <= 0, a)))
     if studentsInTime >= k:
         # class is not cancelled
         return "NO"
