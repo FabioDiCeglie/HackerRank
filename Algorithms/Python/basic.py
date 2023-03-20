@@ -83,3 +83,15 @@ def utopianTree(n):
         else:
             value *= 2
     return value
+
+def angryProfessor(k, a):
+    # Write your code here
+    students = a
+    professorStudentsInAttendance = k
+    studentsInTime = len(list(filter(lambda x: x <= 0, students)))
+    if studentsInTime >= k:
+        # class is not cancelled
+        return "NO"
+    else:
+        # class is cancelled
+        return "YES"
