@@ -67,3 +67,19 @@ def designerPdfViewer(h, word):
 
     tallest_letter = max(letters_heights)
     return word_len * tallest_letter
+
+def utopianTree(n):
+    # Write your code here
+    value = 0
+    if n == 0:
+        return value + 1
+    if n == 1:
+        return value + 2
+    x = range(n + 1)
+    for y in x:
+        print(y)
+        if y % 2 == 0:
+            value += 1
+        else:
+            value *= 2
+    return value
