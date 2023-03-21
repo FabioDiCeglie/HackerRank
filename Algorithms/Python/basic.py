@@ -93,3 +93,22 @@ def angryProfessor(k, a):
     else:
         # class is cancelled
         return "YES"
+
+def beautifulDays(i, j, k):
+    # Write your code here
+    numbers = range(i,j + 1)
+    wholeNumber = 0
+    for x in numbers:
+        #convert number to string
+        num_string = str(x)
+        # store the size of the number
+        size = len(num_string)
+        # use slicing to reverse
+        reversed_num = num_string[size::-1]
+        operation = x - int(reversed_num)
+        divide = operation / k
+        print(x, divide.is_integer())
+        if(divide.is_integer()):
+            wholeNumber += 1
+
+    return wholeNumber
