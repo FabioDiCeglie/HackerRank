@@ -94,6 +94,7 @@ def angryProfessor(k, a):
         # class is cancelled
         return "YES"
 
+# input ex 20 23 6
 def beautifulDays(i, j, k):
     # Write your code here
     numbers = range(i,j + 1)
