@@ -113,3 +113,24 @@ def beautifulDays(i, j, k):
             wholeNumber += 1
 
     return wholeNumber
+
+# input ex 7 19 2
+def saveThePrisoner(n, m, s):
+    res = s + m - 1
+    res %= n
+    if res == 0:
+        return n
+    return res
+        # Write your code here
+    # prisoners = list(range(1, n + 1))
+    # number_of_sweets = m
+    # distribution_start = s - 1
+
+    # while(number_of_sweets != 0):
+    #     number_of_sweets -= 1
+    #     if(number_of_sweets == 0):
+    #         return prisoners[distribution_start]
+    #     distribution_start += 1
+    #     if(distribution_start == n):
+    #         #the distribution restart
+    #         distribution_start = 0
